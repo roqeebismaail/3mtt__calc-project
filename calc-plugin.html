@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator Plug-in</title>
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script async src="script.js"></script>
+</head>
+
+<body>
+  <div class="calc" id="cont"></div>
+
+
+  <!-- <script>
+    //constructor => Blueprint
+
+    class calculator {
+      constructor(id, btnInitial, btnPrimary, btnSecondary) {
+        (this.id = id),
+          (this.btn = btnInitial),
+          (this.btn0 = btnPrimary),
+          (this.btn1 = btnSecondary);
+
+        // console.log(this.id);
+      }
+
+      show() {
+        document.getElementById(
+          this.id
+        ).innerHTML = `<div class="calc-container d-flex flex-col">
+
+            <div class='calc-float calc-float-notch'>
+
+            <span class="material-symbols-outlined notch notch--cam">
+              radio_button_checked
+            </span>
+
+            <span class="material-symbols-outlined notch notch--piece ">
+            unknown_med
+            </span>
+
+              </div>
+
+            <div class="calc-float calc-float-bar">
+
+
+              <span class="material-symbols-outlined">
+              signal_cellular_alt
+              </span>
+
+              <span class="material-symbols-outlined">
+              wifi
+              </span>
+
+              <span class="material-symbols-outlined">
+              battery_horiz_075
+              </span>
+              </div>
+
+            <div class="calc-display">
+             <span id="swap-calc"></span>
+
+             <span id="result"></span>
+            </div>
+
+
+
+             <div class= 'd-grid calc-operation'>
+                     <button class="btn r1c1 ${this.btn1}">C</button>
+                     <button class="btn r1c2 ${this.btn1}">DEL</button>
+                     <button class="btn r1c3 ${this.btn1}">%</button>
+                     <button class="btn r1c4 ${this.btn0}">÷</button>
+
+                     <button class="btn r2c1 ${this.btn}">7</button>
+                     <button class="btn r2c2 ${this.btn}">8</button>
+                     <button class="btn r2c3 ${this.btn}">9</button>
+                     <button class="btn r2c4 ${this.btn0}">x</button>
+
+                     <button class="btn r3c1 ${this.btn}">4</button>
+                     <button class="btn r3c2 ${this.btn}">5</button>
+                     <button class="btn r3c3 ${this.btn}">6</button>
+                     <button class="btn r3c4 ${this.btn0}">-</button>
+
+                     <button class="btn r4c1 ${this.btn}">1</button>
+                     <button class="btn r4c2 ${this.btn}">2</button>
+                     <button class="btn r4c3 ${this.btn}">3</button>
+                     <button class="btn r4c4 ${this.btn0}">+</button>
+
+                     <button class="btn btn--0 r5ca ${this.btn}">0</button>
+
+                     <button class="btn r5c3 ${this.btn}">.</button>
+                     <button class="btn r5c4 ${this.btn0}">=</button>
+            <div>
+         </div>`;
+
+        document.querySelectorAll(`#${this.id} button`).forEach((element) => {
+          // console.log(el);
+
+          element.addEventListener("click", (event) => {
+            let value
+            
+    = event.target.innerText;
+
+            let screen = document.querySelector("#result");
+            let swapScreen = document.querySelector("#swap-calc");
+
+            if (value == "=") {
+              //------------------functionReplace
+              function replaceSyntax(unValidString, validString) {
+                let calcX = screen.innerHTML.replace(
+                  unValidString,
+                  validString
+                );
+
+                //-------------swapCALCULATION
+
+                swapScreen.innerHTML = screen.innerHTML;
+
+                //-----------------EVALUATION(Calculate)
+
+                screen.innerHTML = eval(calcX);
+                return;
+              }
+
+              if (screen.innerHTML.includes("x")) {
+                replaceSyntax("x", "*");
+              }
+
+              if (screen.innerHTML.includes("÷")) {
+                replaceSyntax("÷", "/");
+              }
+
+              //-----------------SWAPPING HERE
+              //-------------swapCALCULATION
+
+              swapScreen.innerHTML = screen.innerHTML;
+
+              //-----------------EVALUATION(Calculate)
+
+              screen.innerHTML = eval(screen.innerHTML);
+
+              //-----------------VALIDATION
+
+              if (!eval(screen.innerHTML.trim())) {
+                screen.innerHTML = "Error Input";
+                return;
+              }
+
+              //-------------changeValue
+
+              //--------------ClearSCREEN
+            } else if (value == "C") {
+              screen.innerHTML = "";
+              // console.log(screen.innerHTML);
+
+              //-------------clearSwapSCREEN
+            } else if (screen.innerHTML == null && value == "C") {
+              console.log(screen.innerHTML);
+
+              //--------------------deleteBUTTON()
+            } else if (value.toLowerCase() == "del") {
+              screen.innerHTML != value;
+            } else {
+              screen.innerHTML += value;
+            }
+          });
+        });
+      }
+    }
+
+    new calculator(
+      "cont0",
+      "btn-initial",
+      "btn-primary",
+      "btn-secondary"
+    ).show();
+
+    // new calculator("cont1", "btn-initial").show();
+
+    // new calculator("cont2", "btn-success").show();
+  </script> -->
+
+</body>
+
+</html>
